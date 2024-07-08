@@ -395,3 +395,37 @@ func (e *ConfigExporter) exportAtlasStreamProcessing(projectName string) ([]runt
 
 	return result, nil
 }
+
+// func (e *ConfigExporter) FetchAtlasStreamProcessing() ([]string, error) {
+// 	dataFederations, err := e.dataProvider.DataFederationList(e.projectID)
+// 	if err != nil {
+// 		return nil, err
+// 	}
+// 	result := make([]string, 0, len(dataFederations))
+// 	for _, obj := range dataFederations {
+// 		name := obj.GetName()
+// 		if reflect.ValueOf(name).IsZero() {
+// 			continue
+// 		}
+// 		result = append(result, name)
+// 	}
+// 	return result, nil
+// }
+
+// func (e *ConfigExporter) exportAtlasFederatedAuth(projectName string) ([]runtime.Object, error) {
+// 	if !e.featureValidator.IsResourceSupported(features.ResourceAtlasFederatedAuth) ||
+// 		!e.featureValidator.IsResourceSupported(features.ResourceAtlasFederatedAuth) {
+// 		return nil, nil
+// 	}
+
+// 	nameList := e.dataFederationNames
+// 	if len(nameList) == 0 {
+// 		dataFederations, err := e.fetchFederationAuthentification()
+// 		if err != nil {
+// 			return nil, err
+// 		}
+// 		nameList = dataFederations
+// 	}
+
+// 	return nil, nil
+// }
